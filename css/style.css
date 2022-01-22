@@ -1,0 +1,129 @@
+/* General */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+svg {
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+button,
+input.btn {
+    background-color: #316612;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px gray;
+}
+
+button:hover,
+button:active,
+input.btn:hover,
+input.btn:active {
+    background-color: #1a4700;
+}
+
+button:active,
+input.btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+button.disabled,
+input.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+input:not(.btn),
+textarea {
+    padding: 5px;
+    font-size: 14px;
+}
+
+hr {
+    max-width: none !important;
+    margin: 0px -10vw !important;
+    border: solid 1px #316612;
+}
+
+/* Common */
+
+h3.section-title {
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 4px 4px 6px #81d742;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+h3.section-title svg {
+    margin: 0px 20px;
+}
+
+h3.section-title,
+h3.section-title svg {
+    color: #316612;
+}
+
+.white-background,
+.black-background {
+    position: relative;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.white-background::before,
+.black-background::before {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: -10vw;
+    bottom: 0px;
+    left: -10vw;
+    z-index: -1;
+}
+
+.white-background::before {
+    background-color: white;
+    opacity: 0.75;
+}
+
+.black-background::before {
+    background-color: black;
+    opacity: 0.35;
+}
+
+@media only screen and (max-width: 600px) {
+    hr {
+        margin: 0px !important;
+    }
+
+    .white-background::before,
+    .black-background::before {
+        right: 0vw;
+        left: 0vw;
+    }
+}

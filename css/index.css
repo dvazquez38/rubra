@@ -1,0 +1,88 @@
+.intro {
+    padding: 0;
+}
+
+.intro iframe {
+    display: block;
+    height: 50vh;
+    max-height: 56.4vw;
+    width: calc(100% + 20vw);
+    min-width: 100%;
+    max-width: 100vw;
+    margin-left: -10vw;
+}
+
+.shortcuts {
+    position: relative;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.shortcuts::before {
+    content: "";
+    background-color: #81d742;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: -10vw;
+    bottom: 0px;
+    left: -10vw;
+    opacity: 0.75;
+    z-index: -1;
+}
+
+.shortcuts-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.shortcuts-wrapper a {
+    flex: 1 1 0px;
+}
+
+.shortcuts-wrapper a h3 {
+    text-shadow: 2px 2px gray;
+}
+
+.shortcuts-wrapper .icon-wrapper {
+    background-color: #316612;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin: 0px auto;
+}
+
+.shortcuts-wrapper .icon-wrapper svg {
+    margin-top: 17px;
+}
+
+.shortcuts-wrapper .icon-wrapper:hover svg {
+    color: #81d742;
+}
+
+.gallery .gallery-images {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.gallery .gallery-images img {
+    width: 30%;
+    min-width: 300px;
+    flex-grow: 1;
+    padding: 15px 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .intro iframe {
+        margin: 0;
+    }
+
+    .shortcuts::before {
+        right: 0vw;
+        left: 0vw;
+    }
+}
