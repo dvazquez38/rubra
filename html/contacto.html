@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/contacto.css">
     <title>Vivero Rubra</title>
 </head>
@@ -74,15 +73,15 @@
                             <legend>Formulario de Contacto</legend>
                             <div>
                                 <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre">
+                                <input type="text" id="nombre" required>
                             </div>
                             <div>
                                 <label for="mail">Correo Electrónico</label>
-                                <input type="text" id="mail">
+                                <input type="email" id="mail" required>
                             </div>
                             <div>
                                 <label for="celular">Teléfono / Celular</label>
-                                <input type="text" id="celular"></td>
+                                <input type="tel" id="celular"></td>
                             </div>
                             <div>
                                 <label for="motivo">Motivo</label>
@@ -90,7 +89,7 @@
                             </div>
                             <div>
                                 <label for="pregunta">Consulta</label>
-                                <textarea id="pregunta" cols="30" rows="10"></textarea>
+                                <textarea id="pregunta" cols="30" rows="10" required></textarea>
                             </div>
                             <input class="btn" type="submit" value="Enviar Consulta">
                         </fieldset>

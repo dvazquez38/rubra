@@ -74,5 +74,6 @@ section.map iframe {
     .contact .contact-wrapper form,
     .contact .contact-wrapper aside {
         margin: 10px;
+        min-width: inherit;
     }
 }
