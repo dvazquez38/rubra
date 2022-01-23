@@ -10,6 +10,7 @@
     min-width: 100%;
     max-width: 100vw;
     margin-left: -10vw;
+    border-radius: 0px;
 }
 
 .shortcuts {
@@ -47,7 +48,7 @@
 }
 
 .shortcuts-wrapper .icon-wrapper {
-    background-color: #316612;
+    background-image: linear-gradient(0deg, #316612, #81d742);
     height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -59,21 +60,7 @@
 }
 
 .shortcuts-wrapper .icon-wrapper:hover svg {
-    color: #81d742;
-}
-
-.gallery .gallery-images {
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap;
-}
-
-.gallery .gallery-images img {
-    width: 30%;
-    min-width: 300px;
-    flex-grow: 1;
-    padding: 15px 10px;
+    color: #316612;
 }
 
 @media only screen and (max-width: 600px) {
@@ -84,5 +71,17 @@
     .shortcuts::before {
         right: 0vw;
         left: 0vw;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .shortcuts-wrapper {
+        flex-wrap: wrap;
+    }
+    
+    .shortcuts-wrapper a {
+        flex: 1 1 50%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }

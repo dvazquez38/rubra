@@ -1,11 +1,5 @@
 .about {
-    /* window height - header - footer - padding */
-    min-height: calc(100vh - 80px - 40px - 40px);
     text-align: justify;
-}
-
-.about .description-column p {
-    padding: 20px;
 }
 
 .about .description-column ul {
@@ -20,8 +14,6 @@
 }
 
 .about-description {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     overflow: hidden;
 }
