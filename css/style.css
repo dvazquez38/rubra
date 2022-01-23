@@ -102,8 +102,7 @@ h3.section-title {
     text-align: center;
     font-size: 30px;
     text-shadow: 4px 4px 6px #81d742;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 20px auto 40px auto;
 }
 
 h3.section-title svg {
@@ -144,6 +143,10 @@ h3.section-title svg {
 .black-background::before {
     background-color: black;
     opacity: 0.35;
+}
+
+.centered {
+    margin: 0px auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -235,6 +238,10 @@ header div.social {
     flex-basis: 0;
 }
 
+header h1.logo a {
+    white-space: nowrap;
+}
+
 header h1.logo svg {
     margin-bottom: -6px;
 }
@@ -254,13 +261,14 @@ header div.social svg:hover {
 }
 
 header nav {
-    min-width: 750px;
+    flex-grow: 2;
 }
 
 header ul li {
     display: inline-block;
-    margin: 0px -2px 0px -2px;
-    width: 20%;
+    margin: 0px -2px;
+    padding: 0px 4px;
+    width: calc(20% - 10px);
     text-align: center;
     vertical-align: middle;
 }
@@ -326,6 +334,19 @@ footer p {
             "footer";
     }
 
+    header,
+    main,
+    footer,
+    header nav {
+        min-width: 520px;
+    }
+
+    main {
+        min-height: calc(100vh - 160px);
+    }
+}
+
+@media only screen and (max-width: 950px) {
     header {
         flex-wrap: wrap;
     }
@@ -344,10 +365,6 @@ footer p {
 
     header div.social {
         order: 2;
-    }
-
-    main {
-        min-height: calc(100vh - 160px);
     }
 }
 
@@ -383,16 +400,6 @@ footer p {
     header h1.logo {
         padding-top: 6px;
         padding-left: 6px;
-    }
-
-    header h1.logo a {
-        position: relative;
-    }
-
-    header h1.logo a small {
-        position: absolute;
-        padding-left: 5px;
-        bottom: 4px;
     }
 
     header div.social {
