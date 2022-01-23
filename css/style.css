@@ -12,6 +12,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    padding: 20px;
+}
+
 h1,
 h2,
 h3,
@@ -22,16 +26,31 @@ svg {
     color: white;
 }
 
-table {
-    width: 100%;
-}
-
 fieldset,
 button,
 input,
 textarea,
 iframe {
     border-radius: 5px;
+}
+
+fieldset {
+    padding: 10px;
+    color: white;
+    width: calc(100% - 24px);
+    margin: 0;
+}
+
+input:not(.btn),
+textarea {
+    margin-bottom: 10px;
+}
+
+form label,
+form input:not(.btn),
+form textarea {
+    display: block;
+    width: calc(100% - 20px);
 }
 
 button,
@@ -109,9 +128,14 @@ h3.section-title svg {
     margin: 0px 20px;
 }
 
-h3.section-title,
-h3.section-title svg {
+.white-background h3.section-title,
+.white-background h3.section-title svg {
     color: #316612;
+}
+
+.black-background h3.section-title,
+.black-background h3.section-title svg {
+    color: white;
 }
 
 .white-background,
@@ -149,6 +173,19 @@ h3.section-title svg {
     margin: 0px auto;
 }
 
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.flex-wrap img {
+    width: 30%;
+    min-width: 300px;
+    flex-grow: 1;
+    padding: 15px 10px;
+}
+
 @media only screen and (max-width: 600px) {
     hr {
         margin: 0px !important;
@@ -158,6 +195,10 @@ h3.section-title svg {
     .black-background::before {
         right: 0vw;
         left: 0vw;
+    }
+
+    .flex-wrap img {
+        min-width: calc(300px - 20px);
     }
 }
 
@@ -326,6 +367,10 @@ main {
     min-height: calc(100vh - 120px);
 }
 
+main section:last-child {
+    height: 100%;
+}
+
 /* Footer */
 
 footer {
@@ -391,6 +436,10 @@ footer p {
 
     header div.social {
         order: 2;
+    }
+
+    main {
+        min-height: calc(100vh - 160px);
     }
 }
 

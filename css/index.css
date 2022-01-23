@@ -63,20 +63,6 @@
     color: #316612;
 }
 
-.gallery .gallery-images {
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-wrap: wrap;
-}
-
-.gallery .gallery-images img {
-    width: 30%;
-    min-width: 300px;
-    flex-grow: 1;
-    padding: 15px 10px;
-}
-
 @media only screen and (max-width: 600px) {
     .intro iframe {
         margin: 0;
@@ -85,10 +71,6 @@
     .shortcuts::before {
         right: 0vw;
         left: 0vw;
-    }
-
-    .gallery .gallery-images img {
-        min-width: calc(300px - 20px);
     }
 }
 
