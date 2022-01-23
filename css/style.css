@@ -238,8 +238,14 @@ header div.social {
     flex-basis: 0;
 }
 
+header h1.logo {
+    margin-bottom: 7px;
+}
+
 header h1.logo a {
     white-space: nowrap;
+    position: relative;
+    margin-bottom: 10px;
 }
 
 header h1.logo svg {
@@ -248,6 +254,9 @@ header h1.logo svg {
 
 header h1.logo small {
     font-size: 14px;
+    position: absolute;
+    right: 0px;
+    bottom: -10px;
 }
 
 header div.social {
@@ -256,11 +265,16 @@ header div.social {
     column-gap: 7px;
 }
 
+header div.social a {
+    height: 16px;
+}
+
 header div.social svg:hover {
     color: #81d742;
 }
 
 header nav {
+    max-width: 850px;
     flex-grow: 2;
 }
 
@@ -327,7 +341,6 @@ footer p {
 @media only screen and (max-width: 1500px) {
     .container {
         grid-template-columns: auto;
-        grid-template-rows: 120px auto 40px;
         grid-template-areas: 
             "header"
             "main"
@@ -347,6 +360,10 @@ footer p {
 }
 
 @media only screen and (max-width: 950px) {
+    .container {
+        grid-template-rows: 120px auto 40px;
+    }
+
     header {
         flex-wrap: wrap;
     }
@@ -359,6 +376,15 @@ footer p {
         min-width: 80vw;
     }
     
+    header h1.logo {
+        margin-bottom: 0px;
+    }
+    
+    header h1.logo small {
+        font-size: 14px;
+        position: initial;
+    }
+
     header nav {
         order: 3;
     }
@@ -407,7 +433,7 @@ footer p {
         padding-right: 6px;
         gap: 15px;
         order: 2;
-    }    
+    }
 
     header nav {
         width: 100vw;
