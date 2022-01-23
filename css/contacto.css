@@ -4,16 +4,6 @@
     flex-grow: 1;
 }
 
-.contact form {
-    width: calc(50% - 2px);
-}
-
-.contact aside.info {
-    color: white;
-    vertical-align: top;
-    width: calc(50% - 22px);
-}
-
 section.map {
     padding-bottom: 60px;
 }
@@ -30,6 +20,6 @@ section.map iframe {
     .contact .contact-wrapper form,
     .contact .contact-wrapper aside {
         margin: 10px;
-        min-width: inherit;
+        min-width: 100%;
     }
 }

@@ -12,6 +12,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    margin-bottom: 0px;
+}
+
 p {
     padding: 20px;
 }
@@ -37,7 +41,6 @@ iframe {
 fieldset {
     padding: 10px;
     color: white;
-    width: calc(100% - 24px);
     margin: 0;
 }
 
@@ -113,6 +116,7 @@ hr {
     max-width: none !important;
     margin: 0px -10vw !important;
     border: solid 1px #316612;
+    height: initial !important;
 }
 
 /* Common */
@@ -133,6 +137,7 @@ h3.section-title svg {
     color: #316612;
 }
 
+.black-background p,
 .black-background h3.section-title,
 .black-background h3.section-title svg {
     color: white;
@@ -186,6 +191,42 @@ h3.section-title svg {
     padding: 15px 10px;
 }
 
+.vertical-divider-wrapper {
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.vertical-divider-wrapper .divider-column {
+    width: calc(50% - 41px);
+    min-width: 300px;
+    flex-grow: 1;
+}
+
+hr.vertical-divider {
+    margin: 20px !important;
+    border: none;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.white-background hr.vertical-divider {
+    border-color: #316612;
+}
+
+.black-background hr.vertical-divider {
+    border-color: #81d742;
+}
+
+hr.vertical-divider:last-child {
+    display: none;
+}
+
+@media only screen and (max-width: 951px) {
+    hr.vertical-divider {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     hr {
         margin: 0px !important;
@@ -208,7 +249,7 @@ h3.section-title svg {
 
 /* General */
 
-.container {
+.inner-body {
     display: grid;
     overflow: hidden;
     grid-template-columns: 10vw 40vw 40vw 10vw;
@@ -289,10 +330,6 @@ header h1.logo a {
     margin-bottom: 10px;
 }
 
-header h1.logo svg {
-    margin-bottom: -6px;
-}
-
 header h1.logo small {
     font-size: 14px;
     position: absolute;
@@ -306,8 +343,8 @@ header div.social {
     column-gap: 7px;
 }
 
-header div.social a {
-    height: 16px;
+header div.social svg {
+    margin-bottom: 2px;
 }
 
 header div.social svg:hover {
@@ -354,7 +391,7 @@ header ul li.selected svg {
 }
 
 nav svg {
-    margin-bottom: -2px;
+    margin-bottom: 2px;
 }
 
 /* Main */
@@ -365,6 +402,8 @@ main * {
 
 main {
     min-height: calc(100vh - 120px);
+    display: flex;
+    flex-flow: column;
 }
 
 main section:last-child {
@@ -384,7 +423,7 @@ footer p {
 }
 
 @media only screen and (max-width: 1500px) {
-    .container {
+    .inner-body {
         grid-template-columns: auto;
         grid-template-areas: 
             "header"
@@ -405,20 +444,12 @@ footer p {
 }
 
 @media only screen and (max-width: 950px) {
-    .container {
+    .inner-body {
         grid-template-rows: 120px auto 40px;
     }
 
     header {
         flex-wrap: wrap;
-    }
-
-    header,
-    main,
-    footer,
-    header nav {
-        width: 80vw;
-        min-width: 80vw;
     }
     
     header h1.logo {
@@ -444,7 +475,7 @@ footer p {
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
+    .inner-body {
         overflow: auto;
         grid-template-rows: 190px auto 40px;
     }
@@ -492,7 +523,6 @@ footer p {
     header nav ul li {
         display: flex;
         justify-content: center;
-        padding: 5px 0px;
         width: 100%;
     }
 
