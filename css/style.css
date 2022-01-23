@@ -73,6 +73,7 @@ button:hover,
 button:active,
 input.btn:hover,
 input.btn:active {
+    color: white;
     background-color: #123100;
 }
 
@@ -172,6 +173,11 @@ h3.section-title svg {
 .black-background::before {
     background-color: black;
     opacity: 0.35;
+}
+
+.offcanvas {
+    max-width: 300px;
+    background-color: #316612;
 }
 
 .centered {
@@ -347,7 +353,9 @@ header div.social svg {
     margin-bottom: 2px;
 }
 
-header div.social svg:hover {
+header a:hover,
+header a:hover svg,
+header i:hover {
     color: #81d742;
 }
 
@@ -383,8 +391,6 @@ header ul li a {
     text-transform: uppercase;
 }
 
-header ul li a:hover,
-header ul li a:hover svg,
 header ul li.selected a,
 header ul li.selected svg {
     color: #81d742;
@@ -392,6 +398,10 @@ header ul li.selected svg {
 
 nav svg {
     margin-bottom: 2px;
+}
+
+header .mobile-menu {
+    display: none;
 }
 
 /* Main */
@@ -477,7 +487,7 @@ footer p {
 @media only screen and (max-width: 600px) {
     .inner-body {
         overflow: auto;
-        grid-template-rows: 190px auto 40px;
+        grid-template-rows: 100px auto 40px;
     }
 
     header,
@@ -489,8 +499,7 @@ footer p {
 
     header,
     main,
-    footer,
-    header nav {
+    footer {
         min-width: 300px;
     }
 
@@ -515,25 +524,49 @@ footer p {
         order: 2;
     }
 
-    header nav {
-        width: 100vw;
-        order: 3;
+    header nav.primary-nav {
+        display: none;
     }
 
-    header nav ul li {
-        display: flex;
-        justify-content: center;
+    header .mobile-menu {
+        position: relative;
+        display: block;
         width: 100%;
+        height: 30px;
+        order: 3;
+        border-top: 1px solid #81d742;
     }
 
-    header nav ul li.right-separator,
-    header nav ul li.left-separator {
-        border-right: none;
-        border-left: none;
+    header .mobile-menu .bi-list {
+        position: absolute;
+        right: 20px;
+        top: 0px;
+        font-size: 24px;
+    }
+
+    header .mobile-menu h5 {
+        font-size: 22px;
+        margin-bottom: 0px;
+    }
+
+    header .mobile-menu ul {
+        padding: 0;
+    }
+
+    header .mobile-menu ul li {
+        display: block;
+        width: 100%;
+        border: 0 !important;
+        text-align: left;
+        padding: 18px;
+    }
+
+    header .mobile-menu ul li a {
+        font-size: 18px;
     }
 
     main {
-        min-height: calc(100vh - 230px);
+        min-height: calc(100vh - 140px);
     }
 
     h3.section-title svg {

@@ -35,7 +35,7 @@
 
 .shortcuts-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     text-align: center;
 }
 
@@ -59,8 +59,10 @@
     margin-top: 17px;
 }
 
-.shortcuts-wrapper .icon-wrapper:hover svg {
+.shortcuts-wrapper a:hover svg,
+.shortcuts-wrapper a:hover h3 {
     color: #316612;
+    text-shadow: 2px 2px #81d742;
 }
 
 @media only screen and (max-width: 600px) {
