@@ -2,40 +2,12 @@
     text-align: justify;
 }
 
-.about .description-column ul {
-    margin-left: 33px;
+.about ul {
     padding-top: 20px;
     padding-right: 20px;
 }
 
-.about .description-column img {
+.about img {
     width: calc(100% - 30px);
     padding: 15px;
-}
-
-.about-description {
-    justify-content: space-around;
-    overflow: hidden;
-}
-
-.about-description .description-column {
-    width: 40%;
-    min-width: 300px;
-    flex-grow: 1;
-}
-
-.about-description hr {
-    margin: 20px !important;
-    border: none;
-    border-left: 1px solid #316612;
-}
-
-.about-description .description-column hr:last-child {
-    display: none;
-}
-
-@media only screen and (max-width: 801px) {
-    .about-description hr {
-        display: none;
-    }
 }
