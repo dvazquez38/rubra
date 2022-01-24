@@ -1,15 +1,17 @@
-.services .service-description img,
+.services h3 {
+    margin-bottom: 30px;
+}
+
 .services .service-description .description {
     margin: 10px;
 }
 
 .services .service-description img {
-    display: block;
     width: 40%;
     min-width: 300px;
     max-width: 450px;
     height: 40%;
-    margin: 0px auto;
+    margin: 20px auto 0px auto;
     flex-grow: 1;
 }
 
@@ -28,14 +30,28 @@
     order: -1;
 }
 
+.nav-pills .nav-link {
+    color: #316612;
+}
+
+.nav-pills .nav-link.active {
+    color: white;
+    background-color: #316612;
+}
+
 @media only screen and (max-width: 600px) {
-    .services img {
-        display: block;
+    .services .service-description .description {
+        margin: 0px;
+    }
+
+    .services .service-description img {
+        width: 100%;
+        min-width: initial;
         margin: 0px auto;
     }
 
-    .services .description-right,
-    .services .description-left {
+    .services .service-description .description-right,
+    .services .service-description .description-left {
         display: block;
         width: 100%;
     }
