@@ -6,8 +6,3 @@
     padding-top: 20px;
     padding-right: 20px;
 }
-
-.about img {
-    width: calc(100% - 30px);
-    padding: 15px;
-}

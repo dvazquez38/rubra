@@ -25,6 +25,7 @@
                     Rubra <small>vivero</small>
                 </a>
             </h1>
+            <!-- Menú desktop -->
             <nav class="primary-nav">
                 <ul>
                     <li class="right-separator">
@@ -39,6 +40,7 @@
                     <li class="left-separator selected"><a href="./contacto.html">Contacto</a></li>
                 </ul>
             </nav>
+            <!-- Links a redes -->
             <div class="social">
                 <a href="./contacto.html">
                     <i class="bi bi-facebook"></i>
@@ -50,6 +52,7 @@
                     <i class="bi bi-whatsapp"></i>
                 </a>
             </div>
+            <!-- Menú mobile -->
             <div class="mobile-menu">
                 <i class="bi bi-list" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -89,33 +92,39 @@
                         </svg>
                     </h3>
                     <div class="contact-wrapper vertical-divider-wrapper flex-wrap">
+                        <!-- Formulario de contacto -->
                         <form class="divider-column" autocomplete="off">
                             <fieldset>
                                 <legend>Formulario de Contacto</legend>
                                 <div>
-                                    <label for="nombre">Nombre</label>
-                                    <input type="text" id="nombre" required>
+                                    <label class="form-label" for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" required>
                                 </div>
                                 <div>
-                                    <label for="mail">Correo Electrónico</label>
-                                    <input type="email" id="mail" required>
+                                    <label class="form-label" for="mail">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="mail" required>
                                 </div>
                                 <div>
-                                    <label for="celular">Teléfono / Celular</label>
-                                    <input type="tel" id="celular"></td>
+                                    <label class="form-label" for="celular">Teléfono / Celular</label>
+                                    <input type="tel" class="form-control" id="celular"></td>
                                 </div>
                                 <div>
-                                    <label for="motivo">Motivo</label>
-                                    <input type="text" id="motivo">
+                                    <label class="form-label" for="motivo">Motivo</label>
+                                    <select class="form-select" id="motivo">
+                                        <option selected value="1">Solicitud Servicio</option>
+                                        <option value="2">Consulta</option>
+                                        <option value="3">Otros</option>
+                                    </select>
                                 </div>
                                 <div>
-                                    <label for="pregunta">Consulta</label>
+                                    <label class="form-label" for="pregunta">Consulta</label>
                                     <textarea id="pregunta" cols="30" rows="10" required></textarea>
                                 </div>
                                 <input class="btn" type="submit" value="Enviar Consulta">
                             </fieldset>
                         </form>
                         <hr class="vertical-divider">
+                        <!-- Información de contacto -->
                         <aside class="divider-column">
                             <p>
                                 <svg width="16px" height="16px" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="leaf" class="svg-inline--fa fa-leaf fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
@@ -140,6 +149,7 @@
                 </div>
             </section>
             <hr>
+            <!-- Mapa con ubicación -->
             <section class="map white-background">
                 <div class="centered">
                     <h3 class="section-title">

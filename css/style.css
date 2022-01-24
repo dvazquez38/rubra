@@ -33,6 +33,8 @@ svg {
 fieldset,
 button,
 input,
+select,
+select.form-select,
 textarea,
 iframe {
     border-radius: 5px;
@@ -45,18 +47,22 @@ fieldset {
 }
 
 input:not(.btn),
+select,
+select.form-select,
 textarea {
     margin-bottom: 10px;
 }
 
 form label,
-form input:not(.btn),
-form textarea {
+input:not(.btn),
+select,
+select.form-select,
+textarea {
     display: block;
     width: calc(100% - 20px);
 }
 
-button,
+button.btn,
 input.btn {
     font-size: 16px;
     border: none;
@@ -65,25 +71,25 @@ input.btn {
     cursor: pointer;
     background-color: #316612;
     background-position: center;
-    box-shadow: 2px 2px 4px gray;
+    box-shadow: 2px 2px 4px gray !important;
     transition: background 1s;
 }
 
-button:hover,
-button:active,
+button.btn:hover,
+button.btn:active,
 input.btn:hover,
 input.btn:active {
     color: white;
     background-color: #123100;
 }
 
-button:hover,
+button.btn:hover,
 input.btn:hover {
     background-image: radial-gradient(circle, transparent 1%, #316612 1%);
     background-size: 15000%;
 }
 
-button:active,
+button.btn:active,
 input.btn:active {
     box-shadow: none;
     transform: translate(2px, 2px);
@@ -92,21 +98,25 @@ input.btn:active {
     background-size: 100%;
 }
 
-button.disabled,
+button.btn.disabled,
 input.btn.disabled {
     opacity: 0.6;
     cursor: not-allowed;
 }
 
 input:not(.btn),
+select,
+select.form-select,
 textarea {
     box-shadow:inset 0 0 5px #123100;
     border: none;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 14px;
 }
 
 input:not(.btn):focus,
+select:focus,
+select.form-select:focus,
 textarea:focus {
     outline: none !important;
     box-shadow: 0px 0px 15px #81d742;
@@ -115,9 +125,13 @@ textarea:focus {
 
 hr {
     max-width: none !important;
-    margin: 0px -10vw !important;
+    margin: 0px !important;
     border: solid 1px #316612;
     height: initial !important;
+}
+
+section hr {
+    margin: 0px -10% !important;
 }
 
 /* Common */
@@ -130,7 +144,7 @@ h3.section-title {
 }
 
 h3.section-title svg {
-    margin: 0px 20px;
+    margin: 0px 20px 5px 20px;
 }
 
 .white-background h3.section-title,
@@ -159,9 +173,9 @@ h3.section-title svg {
     background-size: cover;
     position: absolute;
     top: 0px;
-    right: -10vw;
+    right: 0px;
     bottom: 0px;
-    left: -10vw;
+    left: 0px;
     z-index: -1;
 }
 
@@ -227,6 +241,22 @@ hr.vertical-divider:last-child {
     display: none;
 }
 
+.card-body h5,
+.card-body p {
+    color: #316612;
+    padding: 0;
+    font-weight: bold;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: #316612;
+    background-size: 80% 80%;
+}
+
 @media only screen and (max-width: 951px) {
     hr.vertical-divider {
         display: none;
@@ -234,10 +264,15 @@ hr.vertical-divider:last-child {
 }
 
 @media only screen and (max-width: 600px) {
-    hr {
-        margin: 0px !important;
+    p {
+        padding: 10px;
     }
 
+    hr,
+    section hr {
+        margin: 0px !important;
+    }
+    
     .white-background::before,
     .black-background::before {
         right: 0vw;
@@ -245,7 +280,13 @@ hr.vertical-divider:last-child {
     }
 
     .flex-wrap img {
-        min-width: calc(300px - 20px);
+        width: 100%;
+        min-width: inherit;
+    }
+
+    .vertical-divider-wrapper .divider-column {
+        width: 100%;
+        min-width: initial;
     }
 }
 
@@ -257,9 +298,8 @@ hr.vertical-divider:last-child {
 
 .inner-body {
     display: grid;
-    overflow: hidden;
-    grid-template-columns: 10vw 40vw 40vw 10vw;
-    grid-template-rows: 80px auto 40px;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-rows: 80px auto 44px;
     grid-template-areas: 
         "header header header header"
         "marginLeft main main marginRight"
@@ -279,10 +319,10 @@ footer {
 }
 
 header,
-main,
+section,
 footer {
     min-width: 900px;
-    padding: 0vw 10vw;
+    padding: 0px 10%;
 }
 
 header,
@@ -347,6 +387,7 @@ header div.social {
     display: flex;
     justify-content: right;
     column-gap: 7px;
+    letter-spacing: 6px;
 }
 
 header div.social svg {
@@ -411,7 +452,7 @@ main * {
 }
 
 main {
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 124px);
     display: flex;
     flex-flow: column;
 }
@@ -423,7 +464,7 @@ main section:last-child {
 /* Footer */
 
 footer {
-    height: 40px;
+    height: 44px;
 }
 
 footer p {
@@ -443,19 +484,16 @@ footer p {
 
     header,
     main,
+    section,
     footer,
-    header nav {
+    header nav.primary-nav {
         min-width: 520px;
-    }
-
-    main {
-        min-height: calc(100vh - 160px);
     }
 }
 
 @media only screen and (max-width: 950px) {
     .inner-body {
-        grid-template-rows: 120px auto 40px;
+        grid-template-rows: 120px auto 44px;
     }
 
     header {
@@ -480,25 +518,29 @@ footer p {
     }
 
     main {
-        min-height: calc(100vh - 160px);
+        min-height: calc(100vh - 164px);
     }
 }
 
 @media only screen and (max-width: 600px) {
     .inner-body {
-        overflow: auto;
-        grid-template-rows: 100px auto 40px;
+        grid-template-rows: 100px auto 44px;
     }
 
     header,
     main,
     footer {
         width: 100%;
-        padding: 0;
+        padding: 0px;
+    }
+
+    section {
+        padding: 0px 3%;
     }
 
     header,
     main,
+    section,
     footer {
         min-width: 300px;
     }
@@ -539,7 +581,7 @@ footer p {
 
     header .mobile-menu .bi-list {
         position: absolute;
-        right: 20px;
+        right: 10px;
         top: 0px;
         font-size: 24px;
     }
@@ -566,11 +608,11 @@ footer p {
     }
 
     main {
-        min-height: calc(100vh - 140px);
+        min-height: calc(100vh - 144px);
     }
 
     h3.section-title svg {
-        margin: 0px 5px;
+        margin: 0px 0px 5px 0px;
     }
 }
 
