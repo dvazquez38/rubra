@@ -4,7 +4,9 @@
   "description": "\"# rubra\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/index.scss css/index.css && node-sass --include-path scss scss/tienda.scss css/tienda.css && node-sass --include-path scss scss/servicios.scss css/servicios.css && node-sass --include-path scss scss/about.scss css/about.css && node-sass --include-path scss scss/contacto.scss css/contacto.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",

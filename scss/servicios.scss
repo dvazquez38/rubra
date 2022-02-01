@@ -1,0 +1,66 @@
+@import "./style.scss";
+@import "./layout.scss";
+
+.services {
+    h3 {
+        margin-bottom: 30px;
+    }
+
+    .service-description {
+        img {
+            width: 40%;
+            min-width: 300px;
+            max-width: 450px;
+            height: 40%;
+            margin: 20px auto 0px auto;
+            flex-grow: 1;
+        }
+
+        .description {
+            margin: 10px;
+            text-align: justify;
+            vertical-align: top;
+            width: 50%;
+            flex-grow: 1;
+
+            &.description-right {
+                order: 1;
+            }
+
+            &.description-left {
+                order: -1;
+            }
+        }
+    }
+}
+
+.nav-pills .nav-link {
+    color: $primary-color;
+
+    &.active {
+        color: $light-contrast;
+        background-color: $primary-color;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .services {
+        .service-description {
+            img {
+                width: 100%;
+                min-width: initial;
+                margin: 0px auto;
+            }
+
+            .description {
+                margin: 0px;
+
+                &.description-right,
+                &.description-left {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
