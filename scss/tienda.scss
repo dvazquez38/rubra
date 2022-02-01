@@ -1,0 +1,37 @@
+@import './style.scss';
+@import './layout.scss';
+
+.products-wrapper {
+    .product {
+        width: 30%;
+        min-width: 300px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin: 15px;
+        text-align: center;
+
+        .img-holder {
+            margin: 15px 15px 0px 15px;
+            overflow: hidden;
+        }
+
+        img {
+            display: block;
+            height: 300px;
+            margin: 0px auto;
+            padding: 0px;
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .products-wrapper .product {
+        width: 100%;
+        margin: 15px 0px;
+        min-width: initial;
+    }
+}

@@ -1,0 +1,11 @@
+@import './style.scss';
+@import './layout.scss';
+
+.about {
+    text-align: justify;
+
+    ul {
+        padding-top: 20px;
+        padding-right: 20px;
+    }
+}
