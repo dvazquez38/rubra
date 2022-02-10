@@ -1,16 +1,15 @@
-@import "./style.scss";
-@import "./layout.scss";
+@import "./_style.scss";
+@import "./_layout.scss";
 
 .intro {
     padding: 0;
 
     iframe {
+        @include full-width(100%, 100%, 100%);
+
         display: block;
         height: 50vh;
         max-height: 56.4vw;
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
         border-radius: 0px;
     }
 }
@@ -21,22 +20,18 @@
     padding: 10px;
 
     &::before {
-        content: "";
-        background-color: map-get($theme-green, secondary-color);
-        background-position: center;
-        background-size: cover;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
+        @include absolute-position(0px, 0px, 0px, 0px);
+        @include section-background;
+
+        background-color: map-get($theme, secondary-color);
         opacity: 0.75;
-        z-index: -1;
     }
 
     .shortcuts-wrapper {
         @extend .centered;
-        @include display-flex(initial, space-around, center);
+        @include display-flex(initial, space-around, initial);
+
+        text-align: center;
 
         a {
             flex: 1 1 0px;
@@ -44,8 +39,8 @@
             &:hover {
                 svg,
                 h3 {
-                    color: map-get($theme-green, primary-color);
-                    text-shadow: 2px 2px map-get($theme-green, secondary-color);
+                    color: map-get($theme, primary-color);
+                    text-shadow: 2px 2px map-get($theme, secondary-color);
                 }
             }
 
@@ -56,11 +51,7 @@
         }
 
         .shortcut-icon {
-            background-image: linear-gradient(
-                0deg,
-                map-get($theme-green, primary-color),
-                map-get($theme-green, secondary-color)
-            );
+            background-image: linear-gradient(0deg, map-get($theme, primary-color), map-get($theme, secondary-color));
             height: 70px;
             width: 70px;
             border-radius: 50%;
@@ -86,7 +77,7 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .shortcuts-wrapper {
+    .shortcuts .shortcuts-wrapper {
         flex-wrap: wrap;
 
         .icon-wrapper {

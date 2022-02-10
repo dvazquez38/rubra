@@ -1,5 +1,5 @@
-@import "./style.scss";
-@import "./layout.scss";
+@import "./_style.scss";
+@import "./_layout.scss";
 
 .services {
     @extend .centered;
@@ -12,9 +12,8 @@
         @extend .flex-wrap;
 
         img {
-            width: 40%;
-            min-width: 300px;
-            max-width: 450px;
+            @include full-width(40%, 300px, 450px);
+
             height: 40%;
             margin: 20px auto 0px auto;
             flex-grow: 1;
@@ -39,11 +38,11 @@
 }
 
 .nav-pills .nav-link {
-    color: map-get($theme-green, primary-color);
+    color: map-get($theme, primary-color);
 
     &.active {
         color: map-get($contrast, light-contrast);
-        background-color: map-get($theme-green, primary-color);
+        background-color: map-get($theme, primary-color);
     }
 }
 

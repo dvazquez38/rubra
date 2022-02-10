@@ -1,0 +1,40 @@
+$theme: (
+    primary-color: #316612,
+    primary-dark-color: #123100,
+    secondary-color: #81d742,
+);
+
+$contrast: (
+    light-contrast: white,
+    dark-contrast: black,
+);
+
+$shadow-color: gray;
+
+@mixin display-flex($wrap, $justify, $align) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin absolute-position($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin full-width($width, $min-width, $max-width) {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+}
+
+@mixin section-background {
+    content: "";
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}

@@ -125,14 +125,14 @@ h3.section-title {
 
 .background::before, .white-background::before,
 .black-background::before {
-  content: "";
-  background-position: center;
-  background-size: cover;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  content: "";
+  background-position: center;
+  background-size: cover;
   z-index: -1; }
 
 .white-background::before {
@@ -169,10 +169,11 @@ h3.section-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  text-align: initial; }
+  align-items: initial; }
   .flex-wrap img, .vertical-divider-wrapper img {
     width: 30%;
     min-width: 300px;
+    max-width: initial;
     flex-grow: 1;
     padding: 15px 10px; }
 
@@ -182,6 +183,7 @@ h3.section-title {
   .vertical-divider-wrapper .divider-column {
     width: calc(50% - 41px);
     min-width: 300px;
+    max-width: initial;
     flex-grow: 1; }
 
 hr.vertical-divider {
@@ -222,27 +224,29 @@ hr.vertical-divider {
     left: 0vw; }
   .flex-wrap img, .vertical-divider-wrapper img {
     width: 100%;
-    min-width: inherit; }
+    min-width: inherit;
+    max-width: initial; }
   .vertical-divider-wrapper .divider-column {
     width: 100%;
-    min-width: initial; } }
+    min-width: initial;
+    max-width: initial; } }
 
 /* General */
 body {
   display: block;
   position: relative; }
   body::before {
-    content: "";
-    background-image: url("../assets/images/beautiful-tree-background.jpg");
-    background-position: center;
-    background-size: cover;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.75;
-    z-index: -1; }
+    content: "";
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    background-image: url("../assets/images/beautiful-tree-background.jpg");
+    opacity: 0.75; }
 
 .inner-body {
   display: grid;
@@ -274,7 +278,7 @@ header {
   display: flex;
   flex-wrap: initial;
   justify-content: space-between;
-  text-align: center;
+  align-items: center;
   color: white; }
   header h1.logo,
   header div.social {
@@ -295,7 +299,7 @@ header {
     display: flex;
     flex-wrap: initial;
     justify-content: right;
-    text-align: initial;
+    align-items: initial;
     column-gap: 7px;
     letter-spacing: 6px; }
     header div.social svg {
@@ -336,7 +340,7 @@ main {
   display: flex;
   flex-wrap: initial;
   justify-content: initial;
-  text-align: initial;
+  align-items: initial;
   min-height: calc(100vh - 124px);
   flex-flow: column; }
   main * {
@@ -419,8 +423,10 @@ footer {
       border-top: 1px solid #81d742; }
       header .mobile-menu .bi-list {
         position: absolute;
-        right: 10px;
         top: 0px;
+        right: 10px;
+        bottom: initial;
+        left: initial;
         font-size: 24px; }
       header .mobile-menu h5 {
         font-size: 22px;
@@ -443,12 +449,12 @@ footer {
 .intro {
   padding: 0; }
   .intro iframe {
-    display: block;
-    height: 50vh;
-    max-height: 56.4vw;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
+    display: block;
+    height: 50vh;
+    max-height: 56.4vw;
     border-radius: 0px; }
 
 .shortcuts {
@@ -456,21 +462,22 @@ footer {
   max-width: 100%;
   padding: 10px; }
   .shortcuts::before {
-    content: "";
-    background-color: #81d742;
-    background-position: center;
-    background-size: cover;
     position: absolute;
     top: 0px;
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.75;
-    z-index: -1; }
+    content: "";
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    background-color: #81d742;
+    opacity: 0.75; }
   .shortcuts .shortcuts-wrapper {
     display: flex;
     flex-wrap: initial;
     justify-content: space-around;
+    align-items: initial;
     text-align: center; }
     .shortcuts .shortcuts-wrapper a {
       flex: 1 1 0px; }
@@ -499,11 +506,11 @@ footer {
     left: 0vw; } }
 
 @media only screen and (max-width: 500px) {
-  .shortcuts-wrapper {
+  .shortcuts .shortcuts-wrapper {
     flex-wrap: wrap; }
-    .shortcuts-wrapper .icon-wrapper {
+    .shortcuts .shortcuts-wrapper .icon-wrapper {
       width: 50%; }
-    .shortcuts-wrapper a {
+    .shortcuts .shortcuts-wrapper a {
       flex: 1 1 50%;
       margin-top: 10px;
       margin-bottom: 10px; } }

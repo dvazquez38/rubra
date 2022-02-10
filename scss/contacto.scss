@@ -1,5 +1,5 @@
-@import "./style.scss";
-@import "./layout.scss";
+@import "./_style.scss";
+@import "./_layout.scss";
 
 .contact .contact-wrapper {
     form,
@@ -17,7 +17,7 @@ section.map {
         height: 450px;
         width: calc(100% - 20px);
         margin: 10px;
-        box-shadow: 0px 0px 10px map-get($theme-green, primary-color);
+        box-shadow: 0px 0px 10px map-get($theme, primary-color);
     }
 }
 
