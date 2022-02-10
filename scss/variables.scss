@@ -1,7 +1,13 @@
-$theme: (
+$theme-green: (
     primary-color: #316612,
     primary-dark-color: #123100,
     secondary-color: #81d742,
+);
+
+$theme-purple: (
+    primary-color: #551266,
+    primary-dark-color: #31002f,
+    secondary-color: #d742b2,
 );
 
 $contrast: (
@@ -10,3 +16,10 @@ $contrast: (
 );
 
 $shadow-color: gray;
+
+@mixin display-flex($wrap, $justify, $align) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    text-align: $align;
+}

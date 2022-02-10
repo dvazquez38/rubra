@@ -1,7 +1,9 @@
-@import './style.scss';
-@import './layout.scss';
+@import "./style.scss";
+@import "./layout.scss";
 
 .products-wrapper {
+    @extend .flex-wrap;
+
     .product {
         width: 30%;
         min-width: 300px;
@@ -33,5 +35,10 @@
         width: 100%;
         margin: 15px 0px;
         min-width: initial;
+
+        img {
+            width: 50%;
+            min-width: 300px;
+        }
     }
 }

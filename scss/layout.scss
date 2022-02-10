@@ -38,7 +38,7 @@ footer {
 
 header,
 footer {
-    background-color: map-get($theme, primary-color);
+    background-color: map-get($theme-green, primary-color);
 }
 
 header {
@@ -56,10 +56,9 @@ footer {
 /* Header */
 
 header {
+    @include display-flex(initial, space-between, center);
+
     color: map-get($contrast, light-contrast);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     h1.logo,
     div.social {
@@ -85,8 +84,8 @@ header {
     }
 
     div.social {
-        display: flex;
-        justify-content: right;
+        @include display-flex(initial, right, initial);
+
         column-gap: 7px;
         letter-spacing: 6px;
 
@@ -98,7 +97,7 @@ header {
     a:hover,
     a:hover svg,
     i:hover {
-        color: map-get($theme, secondary-color);
+        color: map-get($theme-green, secondary-color);
     }
 
     nav {
@@ -128,7 +127,7 @@ header {
 
         &.selected a,
         &.selected svg {
-            color: map-get($theme, secondary-color);
+            color: map-get($theme-green, secondary-color);
         }
 
         a {
@@ -147,8 +146,9 @@ header {
 /* Main */
 
 main {
+    @include display-flex(initial, initial, initial);
+
     min-height: calc(100vh - 124px);
-    display: flex;
     flex-flow: column;
 
     * {
@@ -274,7 +274,7 @@ footer {
             width: 100%;
             height: 30px;
             order: 3;
-            border-top: 1px solid map-get($theme, secondary-color);
+            border-top: 1px solid map-get($theme-green, secondary-color);
 
             .bi-list {
                 position: absolute;

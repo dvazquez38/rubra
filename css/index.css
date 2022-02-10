@@ -116,23 +116,14 @@ h3.section-title {
   h3.section-title svg {
     margin: 0px 20px 5px 20px; }
 
-.white-background h3.section-title,
-.white-background h3.section-title svg {
-  color: #316612; }
-
-.black-background p,
-.black-background h3.section-title,
-.black-background h3.section-title svg {
-  color: white; }
-
-.white-background,
+.background, .white-background,
 .black-background {
   position: relative;
   max-width: 100%;
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.white-background::before,
+.background::before, .white-background::before,
 .black-background::before {
   content: "";
   background-position: center;
@@ -148,51 +139,58 @@ h3.section-title {
   background-color: white;
   opacity: 0.75; }
 
+.white-background h3.section-title,
+.white-background h3.section-title svg {
+  color: #316612; }
+
+.white-background hr.vertical-divider {
+  border-color: #316612; }
+
 .black-background::before {
   background-color: black;
   opacity: 0.35; }
+
+.black-background p,
+.black-background h3.section-title,
+.black-background h3.section-title svg {
+  color: white; }
+
+.black-background hr.vertical-divider {
+  border-color: #81d742; }
 
 .offcanvas {
   max-width: 300px;
   background-color: #316612; }
 
-.centered {
+.centered, .shortcuts .shortcuts-wrapper {
   margin: 0px auto; }
 
-.flex-wrap {
+.flex-wrap, .vertical-divider-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; }
-
-.flex-wrap img {
-  width: 30%;
-  min-width: 300px;
-  flex-grow: 1;
-  padding: 15px 10px; }
+  justify-content: space-between;
+  text-align: initial; }
+  .flex-wrap img, .vertical-divider-wrapper img {
+    width: 30%;
+    min-width: 300px;
+    flex-grow: 1;
+    padding: 15px 10px; }
 
 .vertical-divider-wrapper {
   justify-content: space-around;
   overflow: hidden; }
-
-.vertical-divider-wrapper .divider-column {
-  width: calc(50% - 41px);
-  min-width: 300px;
-  flex-grow: 1; }
+  .vertical-divider-wrapper .divider-column {
+    width: calc(50% - 41px);
+    min-width: 300px;
+    flex-grow: 1; }
 
 hr.vertical-divider {
   margin: 20px !important;
   border: none;
   border-width: 1px;
   border-style: solid; }
-
-.white-background hr.vertical-divider {
-  border-color: #316612; }
-
-.black-background hr.vertical-divider {
-  border-color: #81d742; }
-
-hr.vertical-divider:last-child {
-  display: none; }
+  hr.vertical-divider:last-child {
+    display: none; }
 
 .card-body h5,
 .card-body p {
@@ -200,7 +198,7 @@ hr.vertical-divider:last-child {
   padding: 0;
   font-weight: bold; }
 
-.carousel-control-next-icon,
+.carousel-control, .carousel-control-next-icon,
 .carousel-control-prev-icon {
   width: 3rem;
   height: 3rem;
@@ -222,7 +220,7 @@ hr.vertical-divider:last-child {
   .black-background::before {
     right: 0vw;
     left: 0vw; }
-  .flex-wrap img {
+  .flex-wrap img, .vertical-divider-wrapper img {
     width: 100%;
     min-width: inherit; }
   .vertical-divider-wrapper .divider-column {
@@ -273,10 +271,11 @@ footer {
 
 /* Header */
 header {
-  color: white;
   display: flex;
+  flex-wrap: initial;
   justify-content: space-between;
-  align-items: center; }
+  text-align: center;
+  color: white; }
   header h1.logo,
   header div.social {
     flex-grow: 1;
@@ -294,7 +293,9 @@ header {
       bottom: -10px; }
   header div.social {
     display: flex;
+    flex-wrap: initial;
     justify-content: right;
+    text-align: initial;
     column-gap: 7px;
     letter-spacing: 6px; }
     header div.social svg {
@@ -332,8 +333,11 @@ header {
 
 /* Main */
 main {
-  min-height: calc(100vh - 124px);
   display: flex;
+  flex-wrap: initial;
+  justify-content: initial;
+  text-align: initial;
+  min-height: calc(100vh - 124px);
   flex-flow: column; }
   main * {
     max-width: 1200px; }
@@ -438,60 +442,53 @@ footer {
 
 .intro {
   padding: 0; }
-
-.intro iframe {
-  display: block;
-  height: 50vh;
-  max-height: 56.4vw;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-  border-radius: 0px; }
+  .intro iframe {
+    display: block;
+    height: 50vh;
+    max-height: 56.4vw;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 0px; }
 
 .shortcuts {
   position: relative;
   max-width: 100%;
   padding: 10px; }
-
-.shortcuts::before {
-  content: "";
-  background-color: #81d742;
-  background-position: center;
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
-  z-index: -1; }
-
-.shortcuts-wrapper {
-  display: flex;
-  justify-content: space-around;
-  text-align: center; }
-
-.shortcuts-wrapper a {
-  flex: 1 1 0px; }
-
-.shortcuts-wrapper a h3 {
-  text-shadow: 2px 2px gray;
-  margin-bottom: 0px; }
-
-.shortcuts-wrapper .shortcut-icon {
-  background-image: linear-gradient(0deg, #316612, #81d742);
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  margin: 0px auto; }
-
-.shortcuts-wrapper .shortcut-icon svg {
-  margin-top: 17px; }
-
-.shortcuts-wrapper a:hover svg,
-.shortcuts-wrapper a:hover h3 {
-  color: #316612;
-  text-shadow: 2px 2px #81d742; }
+  .shortcuts::before {
+    content: "";
+    background-color: #81d742;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+    z-index: -1; }
+  .shortcuts .shortcuts-wrapper {
+    display: flex;
+    flex-wrap: initial;
+    justify-content: space-around;
+    text-align: center; }
+    .shortcuts .shortcuts-wrapper a {
+      flex: 1 1 0px; }
+      .shortcuts .shortcuts-wrapper a:hover svg,
+      .shortcuts .shortcuts-wrapper a:hover h3 {
+        color: #316612;
+        text-shadow: 2px 2px #81d742; }
+      .shortcuts .shortcuts-wrapper a h3 {
+        text-shadow: 2px 2px gray;
+        margin-bottom: 0px; }
+    .shortcuts .shortcuts-wrapper .shortcut-icon {
+      background-image: linear-gradient(0deg, #316612, #81d742);
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      margin: 0px auto; }
+      .shortcuts .shortcuts-wrapper .shortcut-icon svg {
+        margin-top: 17px; }
 
 @media only screen and (max-width: 600px) {
   .intro iframe {
@@ -504,9 +501,9 @@ footer {
 @media only screen and (max-width: 500px) {
   .shortcuts-wrapper {
     flex-wrap: wrap; }
-  .shortcuts-wrapper .icon-wrapper {
-    width: 50%; }
-  .shortcuts-wrapper a {
-    flex: 1 1 50%;
-    margin-top: 10px;
-    margin-bottom: 10px; } }
+    .shortcuts-wrapper .icon-wrapper {
+      width: 50%; }
+    .shortcuts-wrapper a {
+      flex: 1 1 50%;
+      margin-top: 10px;
+      margin-bottom: 10px; } }

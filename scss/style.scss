@@ -69,7 +69,7 @@ input.btn {
     color: map-get($contrast, light-contrast);
     padding: 12px;
     cursor: pointer;
-    background-color: map-get($theme, primary-color);
+    background-color: map-get($theme-green, primary-color);
     background-position: center;
     box-shadow: 2px 2px 4px gray !important;
     transition: background 1s;
@@ -77,11 +77,11 @@ input.btn {
     &:hover,
     &:active {
         color: map-get($contrast, light-contrast);
-        background-color: map-get($theme, primary-dark-color);
+        background-color: map-get($theme-green, primary-dark-color);
     }
 
     &:hover {
-        background-image: radial-gradient(circle, transparent 1%, map-get($theme, primary-color) 1%);
+        background-image: radial-gradient(circle, transparent 1%, map-get($theme-green, primary-color) 1%);
         background-size: 15000%;
     }
 
@@ -89,7 +89,7 @@ input.btn {
         box-shadow: none;
         transform: translate(2px, 2px);
         transition: background 0s;
-        background-color: map-get($theme, primary-color);
+        background-color: map-get($theme-green, primary-color);
         background-size: 100%;
     }
 
@@ -103,14 +103,14 @@ input:not(.btn),
 select,
 select.form-select,
 textarea {
-    box-shadow: inset 0 0 5px map-get($theme, primary-dark-color);
+    box-shadow: inset 0 0 5px map-get($theme-green, primary-dark-color);
     border: none;
     padding: 5px 10px;
     font-size: 14px;
 
     &:focus {
         outline: none !important;
-        box-shadow: 0px 0px 15px map-get($theme, secondary-color);
+        box-shadow: 0px 0px 15px map-get($theme-green, secondary-color);
         border-radius: 5px;
     }
 }
@@ -118,7 +118,7 @@ textarea {
 hr {
     max-width: none !important;
     margin: 0px !important;
-    border: solid 1px map-get($theme, primary-color);
+    border: solid 1px map-get($theme-green, primary-color);
     height: initial !important;
 }
 
@@ -131,7 +131,7 @@ section hr {
 h3.section-title {
     text-align: center;
     font-size: 30px;
-    text-shadow: 4px 4px 6px map-get($theme, secondary-color);
+    text-shadow: 4px 4px 6px map-get($theme-green, secondary-color);
     margin: 20px auto 40px auto;
 
     svg {
@@ -139,27 +139,14 @@ h3.section-title {
     }
 }
 
-.white-background h3.section-title,
-.white-background h3.section-title svg {
-    color: map-get($theme, primary-color);
-}
-
-.black-background p,
-.black-background h3.section-title,
-.black-background h3.section-title svg {
-    color: map-get($contrast, light-contrast);
-}
-
-.white-background,
-.black-background {
+.background {
     position: relative;
     max-width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.white-background::before,
-.black-background::before {
+.background::before {
     content: "";
     background-position: center;
     background-size: cover;
@@ -171,19 +158,49 @@ h3.section-title {
     z-index: -1;
 }
 
-.white-background::before {
-    background-color: map-get($contrast, light-contrast);
-    opacity: 0.75;
+.white-background,
+.black-background {
+    @extend .background;
 }
 
-.black-background::before {
-    background-color: map-get($contrast, dark-contrast);
-    opacity: 0.35;
+.white-background {
+    &::before {
+        @extend .background::before;
+        background-color: map-get($contrast, light-contrast);
+        opacity: 0.75;
+    }
+
+    h3.section-title,
+    h3.section-title svg {
+        color: map-get($theme-green, primary-color);
+    }
+
+    hr.vertical-divider {
+        border-color: map-get($theme-green, primary-color);
+    }
+}
+
+.black-background {
+    &::before {
+        @extend .background::before;
+        background-color: map-get($contrast, dark-contrast);
+        opacity: 0.35;
+    }
+
+    p,
+    h3.section-title,
+    h3.section-title svg {
+        color: map-get($contrast, light-contrast);
+    }
+
+    hr.vertical-divider {
+        border-color: map-get($theme-green, secondary-color);
+    }
 }
 
 .offcanvas {
     max-width: 300px;
-    background-color: map-get($theme, primary-color);
+    background-color: map-get($theme-green, primary-color);
 }
 
 .centered {
@@ -191,27 +208,27 @@ h3.section-title {
 }
 
 .flex-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+    @include display-flex(wrap, space-between, initial);
 
-.flex-wrap img {
-    width: 30%;
-    min-width: 300px;
-    flex-grow: 1;
-    padding: 15px 10px;
+    img {
+        width: 30%;
+        min-width: 300px;
+        flex-grow: 1;
+        padding: 15px 10px;
+    }
 }
 
 .vertical-divider-wrapper {
+    @extend .flex-wrap;
+
     justify-content: space-around;
     overflow: hidden;
-}
 
-.vertical-divider-wrapper .divider-column {
-    width: calc(50% - 41px);
-    min-width: 300px;
-    flex-grow: 1;
+    .divider-column {
+        width: calc(50% - 41px);
+        min-width: 300px;
+        flex-grow: 1;
+    }
 }
 
 hr.vertical-divider {
@@ -219,34 +236,32 @@ hr.vertical-divider {
     border: none;
     border-width: 1px;
     border-style: solid;
+
+    &:last-child {
+        display: none;
+    }
 }
 
-.white-background hr.vertical-divider {
-    border-color: map-get($theme, primary-color);
+.card-body {
+    h5,
+    p {
+        color: map-get($theme-green, primary-color);
+        padding: 0;
+        font-weight: bold;
+    }
 }
 
-.black-background hr.vertical-divider {
-    border-color: map-get($theme, secondary-color);
-}
-
-hr.vertical-divider:last-child {
-    display: none;
-}
-
-.card-body h5,
-.card-body p {
-    color: map-get($theme, primary-color);
-    padding: 0;
-    font-weight: bold;
+.carousel-control {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: map-get($theme-green, primary-color);
+    background-size: 80% 80%;
 }
 
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 5px;
-    background-color: map-get($theme, primary-color);
-    background-size: 80% 80%;
+    @extend .carousel-control;
 }
 
 @media only screen and (max-width: 951px) {

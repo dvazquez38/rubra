@@ -3,73 +3,74 @@
 
 .intro {
     padding: 0;
-}
 
-.intro iframe {
-    display: block;
-    height: 50vh;
-    max-height: 56.4vw;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    border-radius: 0px;
+    iframe {
+        display: block;
+        height: 50vh;
+        max-height: 56.4vw;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        border-radius: 0px;
+    }
 }
 
 .shortcuts {
     position: relative;
     max-width: 100%;
     padding: 10px;
-}
 
-.shortcuts::before {
-    content: "";
-    background-color: map-get($theme, secondary-color);
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-    z-index: -1;
-}
+    &::before {
+        content: "";
+        background-color: map-get($theme-green, secondary-color);
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        opacity: 0.75;
+        z-index: -1;
+    }
 
-.shortcuts-wrapper {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
+    .shortcuts-wrapper {
+        @extend .centered;
+        @include display-flex(initial, space-around, center);
 
-.shortcuts-wrapper a {
-    flex: 1 1 0px;
-}
+        a {
+            flex: 1 1 0px;
 
-.shortcuts-wrapper a h3 {
-    text-shadow: 2px 2px $shadow-color;
-    margin-bottom: 0px;
-}
+            &:hover {
+                svg,
+                h3 {
+                    color: map-get($theme-green, primary-color);
+                    text-shadow: 2px 2px map-get($theme-green, secondary-color);
+                }
+            }
 
-.shortcuts-wrapper .shortcut-icon {
-    background-image: linear-gradient(
-        0deg,
-        map-get($theme, primary-color),
-        map-get($theme, map-get($theme, secondary-color))
-    );
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin: 0px auto;
-}
+            h3 {
+                text-shadow: 2px 2px $shadow-color;
+                margin-bottom: 0px;
+            }
+        }
 
-.shortcuts-wrapper .shortcut-icon svg {
-    margin-top: 17px;
-}
+        .shortcut-icon {
+            background-image: linear-gradient(
+                0deg,
+                map-get($theme-green, primary-color),
+                map-get($theme-green, secondary-color)
+            );
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin: 0px auto;
 
-.shortcuts-wrapper a:hover svg,
-.shortcuts-wrapper a:hover h3 {
-    color: map-get($theme, primary-color);
-    text-shadow: 2px 2px map-get($theme, secondary-color);
+            svg {
+                margin-top: 17px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -87,15 +88,15 @@
 @media only screen and (max-width: 500px) {
     .shortcuts-wrapper {
         flex-wrap: wrap;
-    }
 
-    .shortcuts-wrapper .icon-wrapper {
-        width: 50%;
-    }
+        .icon-wrapper {
+            width: 50%;
+        }
 
-    .shortcuts-wrapper a {
-        flex: 1 1 50%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        a {
+            flex: 1 1 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
 }

@@ -2,11 +2,15 @@
 @import "./layout.scss";
 
 .services {
+    @extend .centered;
+
     h3 {
         margin-bottom: 30px;
     }
 
     .service-description {
+        @extend .flex-wrap;
+
         img {
             width: 40%;
             min-width: 300px;
@@ -35,11 +39,11 @@
 }
 
 .nav-pills .nav-link {
-    color: map-get($theme, primary-color);
+    color: map-get($theme-green, primary-color);
 
     &.active {
         color: map-get($contrast, light-contrast);
-        background-color: map-get($theme, primary-color);
+        background-color: map-get($theme-green, primary-color);
     }
 }
 
@@ -47,8 +51,6 @@
     .services {
         .service-description {
             img {
-                width: 100%;
-                min-width: initial;
                 margin: 0px auto;
             }
 
