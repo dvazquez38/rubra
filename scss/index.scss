@@ -1,5 +1,5 @@
-@import './style.scss';
-@import './layout.scss';
+@import "./style.scss";
+@import "./layout.scss";
 
 .intro {
     padding: 0;
@@ -23,7 +23,7 @@
 
 .shortcuts::before {
     content: "";
-    background-color: $secondary-color;
+    background-color: map-get($theme, secondary-color);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -51,7 +51,11 @@
 }
 
 .shortcuts-wrapper .shortcut-icon {
-    background-image: linear-gradient(0deg, $primary-color, $secondary-color);
+    background-image: linear-gradient(
+        0deg,
+        map-get($theme, primary-color),
+        map-get($theme, map-get($theme, secondary-color))
+    );
     height: 70px;
     width: 70px;
     border-radius: 50%;
@@ -64,8 +68,8 @@
 
 .shortcuts-wrapper a:hover svg,
 .shortcuts-wrapper a:hover h3 {
-    color: $primary-color;
-    text-shadow: 2px 2px $secondary-color;
+    color: map-get($theme, primary-color);
+    text-shadow: 2px 2px map-get($theme, secondary-color);
 }
 
 @media only screen and (max-width: 600px) {

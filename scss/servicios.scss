@@ -35,11 +35,11 @@
 }
 
 .nav-pills .nav-link {
-    color: $primary-color;
+    color: map-get($theme, primary-color);
 
     &.active {
-        color: $light-contrast;
-        background-color: $primary-color;
+        color: map-get($contrast, light-contrast);
+        background-color: map-get($theme, primary-color);
     }
 }
 

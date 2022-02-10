@@ -1,8 +1,12 @@
-$primary-color: #316612;
-$primary-dark-color: #123100;
-$secondary-color: #81d742;
+$theme: (
+    primary-color: #316612,
+    primary-dark-color: #123100,
+    secondary-color: #81d742,
+);
 
-$light-contrast: white;
-$dark-contrast: black;
+$contrast: (
+    light-contrast: white,
+    dark-contrast: black,
+);
 
 $shadow-color: gray;

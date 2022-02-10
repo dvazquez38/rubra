@@ -38,7 +38,7 @@ footer {
 
 header,
 footer {
-    background-color: $primary-color;
+    background-color: map-get($theme, primary-color);
 }
 
 header {
@@ -56,7 +56,7 @@ footer {
 /* Header */
 
 header {
-    color: $light-contrast;
+    color: map-get($contrast, light-contrast);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,7 +98,7 @@ header {
     a:hover,
     a:hover svg,
     i:hover {
-        color: $secondary-color;
+        color: map-get($theme, secondary-color);
     }
 
     nav {
@@ -119,20 +119,20 @@ header {
         vertical-align: middle;
 
         &.right-separator {
-            border-right: 1px solid $light-contrast;
+            border-right: 1px solid map-get($contrast, light-contrast);
         }
 
         &.left-separator {
-            border-left: 1px solid $light-contrast;
+            border-left: 1px solid map-get($contrast, light-contrast);
         }
 
         &.selected a,
         &.selected svg {
-            color: $secondary-color;
+            color: map-get($theme, secondary-color);
         }
 
         a {
-            color: $light-contrast;
+            color: map-get($contrast, light-contrast);
             font-weight: bold;
             font-size: 16px;
             text-transform: uppercase;
@@ -167,7 +167,7 @@ footer {
 
     p {
         text-align: center;
-        color: $light-contrast;
+        color: map-get($contrast, light-contrast);
         padding: 10px;
     }
 }
@@ -274,7 +274,7 @@ footer {
             width: 100%;
             height: 30px;
             order: 3;
-            border-top: 1px solid $secondary-color;
+            border-top: 1px solid map-get($theme, secondary-color);
 
             .bi-list {
                 position: absolute;
@@ -287,7 +287,7 @@ footer {
                 font-size: 22px;
                 margin-bottom: 0px;
             }
-    
+
             ul {
                 padding: 0;
 
