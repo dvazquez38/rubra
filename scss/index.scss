@@ -1,71 +1,67 @@
-@import './style.scss';
-@import './layout.scss';
+@import "./_style.scss";
+@import "./_layout.scss";
 
 .intro {
     padding: 0;
-}
 
-.intro iframe {
-    display: block;
-    height: 50vh;
-    max-height: 56.4vw;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    border-radius: 0px;
+    iframe {
+        @include full-width(100%, 100%, 100%);
+
+        display: block;
+        height: 50vh;
+        max-height: 56.4vw;
+        border-radius: 0px;
+    }
 }
 
 .shortcuts {
     position: relative;
     max-width: 100%;
     padding: 10px;
-}
 
-.shortcuts::before {
-    content: "";
-    background-color: $secondary-color;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-    z-index: -1;
-}
+    &::before {
+        @include absolute-position(0px, 0px, 0px, 0px);
+        @include section-background;
 
-.shortcuts-wrapper {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-}
+        background-color: map-get($theme, secondary-color);
+        opacity: 0.75;
+    }
 
-.shortcuts-wrapper a {
-    flex: 1 1 0px;
-}
+    .shortcuts-wrapper {
+        @extend .centered;
+        @include display-flex(initial, space-around, initial);
 
-.shortcuts-wrapper a h3 {
-    text-shadow: 2px 2px $shadow-color;
-    margin-bottom: 0px;
-}
+        text-align: center;
 
-.shortcuts-wrapper .shortcut-icon {
-    background-image: linear-gradient(0deg, $primary-color, $secondary-color);
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    margin: 0px auto;
-}
+        a {
+            flex: 1 1 0px;
 
-.shortcuts-wrapper .shortcut-icon svg {
-    margin-top: 17px;
-}
+            &:hover {
+                svg,
+                h3 {
+                    color: map-get($theme, primary-color);
+                    text-shadow: 2px 2px map-get($theme, secondary-color);
+                }
+            }
 
-.shortcuts-wrapper a:hover svg,
-.shortcuts-wrapper a:hover h3 {
-    color: $primary-color;
-    text-shadow: 2px 2px $secondary-color;
+            h3 {
+                text-shadow: 2px 2px $shadow-color;
+                margin-bottom: 0px;
+            }
+        }
+
+        .shortcut-icon {
+            background-image: linear-gradient(0deg, map-get($theme, primary-color), map-get($theme, secondary-color));
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin: 0px auto;
+
+            svg {
+                margin-top: 17px;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -81,17 +77,17 @@
 }
 
 @media only screen and (max-width: 500px) {
-    .shortcuts-wrapper {
+    .shortcuts .shortcuts-wrapper {
         flex-wrap: wrap;
-    }
 
-    .shortcuts-wrapper .icon-wrapper {
-        width: 50%;
-    }
+        .icon-wrapper {
+            width: 50%;
+        }
 
-    .shortcuts-wrapper a {
-        flex: 1 1 50%;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        a {
+            flex: 1 1 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
 }

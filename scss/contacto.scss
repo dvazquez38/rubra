@@ -1,10 +1,12 @@
-@import './style.scss';
-@import './layout.scss';
+@import "./_style.scss";
+@import "./_layout.scss";
 
-.contact .contact-wrapper form,
-.contact .contact-wrapper aside {
-    min-width: 350px;
-    flex-grow: 1;
+.contact .contact-wrapper {
+    form,
+    aside {
+        min-width: 350px;
+        flex-grow: 1;
+    }
 }
 
 section.map {
@@ -15,14 +17,16 @@ section.map {
         height: 450px;
         width: calc(100% - 20px);
         margin: 10px;
-        box-shadow: 0px 0px 10px $primary-color;
+        box-shadow: 0px 0px 10px map-get($theme, primary-color);
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .contact .contact-wrapper form,
-    .contact .contact-wrapper aside {
-        margin: 10px;
-        min-width: 100%;
+    .contact .contact-wrapper {
+        form,
+        aside {
+            margin: 10px;
+            min-width: 100%;
+        }
     }
 }
