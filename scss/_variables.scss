@@ -1,12 +1,14 @@
 $theme: (
     primary-color: #316612,
     primary-dark-color: #123100,
+    primary-dark-transparent-color: #12310000,
     secondary-color: #81d742,
+    secondary-bright-color: #a7ff69
 );
 
 $contrast: (
     light-contrast: white,
-    dark-contrast: black,
+    dark-contrast: black
 );
 
 $shadow-color: gray;
