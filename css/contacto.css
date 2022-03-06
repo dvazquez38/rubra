@@ -451,6 +451,20 @@ footer {
   min-width: 350px;
   flex-grow: 1; }
 
+.contact .contact-wrapper p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative; }
+  .contact .contact-wrapper p i {
+    font-size: 30px; }
+  .contact .contact-wrapper p span a {
+    cursor: pointer;
+    color: #a7ff69; }
+    .contact .contact-wrapper p span a:hover {
+      color: #81d742; }
+
 section.map {
   padding-bottom: 60px; }
   section.map iframe {

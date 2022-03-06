@@ -448,6 +448,8 @@ footer {
 
 .about {
   text-align: justify; }
+  .about p {
+    padding: 20px 20px 10px 20px;
+    margin-bottom: 0px; }
   .about ul {
-    padding-top: 20px;
     padding-right: 20px; }
